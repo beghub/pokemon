@@ -31,24 +31,11 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         view.backgroundColor = .systemBackground
         searchBar.isHidden = false
         searchBar.delegate = self
-//        searchBar.keyboardType = .numberPad
         cardsCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         cardsCollectionView.delegate = self
         cardsCollectionView.dataSource = self
         cardsCollectionView.backgroundColor = .systemBackground
         cardsCollectionView.collectionViewLayout = createLayout()
-        APICaller.shared.fetchPosts{ [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let cards):
-                    self?.cards = cards
-                    self?.cardsCollectionView?.reloadData()
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-        }
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -86,14 +73,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         return layout
     }
     
-//    func showCardDetails(for card: Card) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
-//            if let cardDetailsVC = storyboard.instantiateViewController(withIdentifier: "CardDetailsViewController") as? CardDetailsViewController {
-//                cardDetailsVC.card = card
-//                navigationController?.pushViewController(cardDetailsVC, animated: true)
-//            }
-//        }
-    
     func showCardDetails(for card: Card) {
         performSegue(withIdentifier: "CustomSearchCardDetailsSegue", sender: card)
     }
@@ -108,6 +87,28 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     
     func updateSearchResults(for searchController: UISearchController) {
         
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Filter the cards based on the search text
+        if searchText.isEmpty {
+            return
+        }
+        else {
+            APICaller.shared.fetchPosts(hp: searchText){ [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let cards):
+                        self?.cards = cards
+                        self?.cardsCollectionView?.reloadData()
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        cardsCollectionView.reloadData()
     }
 }
 

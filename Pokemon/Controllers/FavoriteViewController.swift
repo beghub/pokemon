@@ -33,13 +33,13 @@ class FavoriteViewController: UIViewController{
     }
     
     private func removeFavoriteCard(at indexPath: IndexPath) {
-        favoriteCards.remove(at: indexPath.item)
+        if favoriteCards.count > 1 {
+            favoriteCards.remove(at: indexPath.item)
+        }
         
         // Update the favoriteCards array in UserDefaults
         UserDefaultsManager.shared.setFavoriteCards(favoriteCards)
         print("removed.")
-        // Refresh the collection view to reflect the updated list of favorite cards
-        favsCollectionView.reloadData()
     }
         
     // Selector method to reload data

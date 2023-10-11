@@ -80,8 +80,71 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "FavoriteViewController"
-            landmarkType = "21">
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53158F27-D171-41C4-89F1-DE53F5006619"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokemon/Managers/APICaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fetchPosts(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53158F27-D171-41C4-89F1-DE53F5006619 - b7ef16ebcebfcece"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemon.APICaller.fetchPosts(hp: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;Pokemon.Card&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pokemon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/begumtuzuner/Documents/GitHub/pokemon/Pokemon/Managers/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "53158F27-D171-41C4-89F1-DE53F5006619 - b7ef16ebcebfcece"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemon.APICaller.fetchPosts(hp: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;Pokemon.Card&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pokemon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/begumtuzuner/Documents/GitHub/pokemon/Pokemon/Managers/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "460">
+               </Location>
+               <Location
+                  uuid = "53158F27-D171-41C4-89F1-DE53F5006619 - 1173417199d351a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemon.APICaller.fetchPosts(completion: (Swift.Result&lt;Swift.Array&lt;Pokemon.Card&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pokemon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/begumtuzuner/Documents/GitHub/pokemon/Pokemon/Managers/APICaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

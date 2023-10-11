@@ -18,10 +18,12 @@ final class APICaller{
         case failedToGetData
     }
     
-    func fetchPosts(completion: @escaping (Result<[Card], Error>) -> Void) {
-        let apiURLString = "https://api.pokemontcg.io/v1/cards?hp=gte99"
-
-        guard let url = URL(string: apiURLString) else {
+    func fetchPosts(hp: String, completion: @escaping (Result<[Card], Error>) -> Void) {
+        let baseAPIURL = "https://api.pokemontcg.io/v1/cards?hp=gte"
+        
+        let baseURL = baseAPIURL + hp
+            
+        guard let url = URL(string: baseURL) else {
             return
         }
 

@@ -12,27 +12,27 @@ struct SearchResponse: Codable {
 }
 
 struct Card: Codable {
-    let id: String
+    let id: String?
     let name: String
-    let nationalPokedexNumber: Int
+    let nationalPokedexNumber: Int?
     let imageUrl: String
-    let imageUrlHiRes: String
-    let types: [String]
-    let supertype: String
+    let imageUrlHiRes: String?
+    let types: [String]?
+    let supertype: String?
     let subtype: String?
     let ability: Ability?
     let hp: String
     let retreatCost: [String]?
     let convertedRetreatCost: Int?
-    let number: String
+    let number: String?
     let artist: String
     let rarity: String?
-    let series: String
+    let series: String?
     let set: String?
-    let setCode: String
+    let setCode: String?
     let text: [String]?
     let attacks: [Attack]?
-    let weaknesses: [Weakness]
+    let weaknesses: [Weakness]?
 }
 
 struct Ability: Codable {
@@ -42,15 +42,15 @@ struct Ability: Codable {
 }
 
 struct Attack: Codable {
-    let cost: [String]
-    let name: String
+    let cost: [String]?
+    let name: String?
     let text: String?
-    let damage: String
-    let convertedEnergyCost: Int
+    let damage: String?
+    let convertedEnergyCost: Int?
 }
 
 struct Weakness: Codable {
-    let type: String
-    let value: String
+    let type: String?
+    let value: String?
 }
 
